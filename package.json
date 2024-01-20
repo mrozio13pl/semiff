@@ -1,0 +1,54 @@
+{
+  "name": "semiff",
+  "version": "0.0.0",
+  "description": "A tiny (790B) utility to get the type difference between two semver versions.",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "./semiff.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./semiff.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./semiff.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "repository": "mrozio13pl/semiff",
+  "author": "mrozio13pl",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist && rollup -c",
+    "lint": "publint && eslint .",
+    "test": "tap",
+    "release": "npm t && npm run build && release-it && npm run publish",
+    "publish": "clean-publish"
+  },
+  "files": [
+    "dist",
+    "semiff.d.ts",
+    "semiff.d.mts"
+  ],
+  "keywords": [
+    "semver",
+    "diff"
+  ],
+  "devDependencies": {
+    "@mrozio/eslint-config": "^1.0.3",
+    "@release-it/conventional-changelog": "^8.0.1",
+    "@types/node": "^20.11.5",
+    "clean-publish": "^4.2.0",
+    "eslint": "^8.56.0",
+    "publint": "^0.2.7",
+    "release-it": "^17.0.1",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.9.5",
+    "rollup-plugin-esbuild": "^6.1.0",
+    "tap": "^18.6.1"
+  }
+}
