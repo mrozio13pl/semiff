@@ -41,14 +41,14 @@
   "devDependencies": {
     "@mrozio/eslint-config": "^1.0.3",
     "@release-it/conventional-changelog": "^8.0.1",
-    "@types/node": "^20.11.5",
-    "clean-publish": "^4.2.0",
-    "eslint": "^8.56.0",
+    "@types/node": "^20.11.24",
+    "clean-publish": "^4.3.0",
+    "eslint": "^8.57.0",
     "publint": "^0.2.7",
-    "release-it": "^17.0.1",
+    "release-it": "^17.1.1",
     "rimraf": "^5.0.5",
-    "rollup": "^4.9.5",
-    "rollup-plugin-esbuild": "^6.1.0",
-    "tap": "^18.6.1"
+    "rollup": "^4.12.0",
+    "rollup-plugin-esbuild": "^6.1.1",
+    "tap": "^18.7.0"
   }
 }
