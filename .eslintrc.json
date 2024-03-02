@@ -1,3 +1,6 @@
 {
-    "extends": ["@mrozio/eslint-config"]
+    "extends": ["@mrozio/eslint-config"],
+    "rules": {
+      "consistent-return": "off"
+    }
 }
