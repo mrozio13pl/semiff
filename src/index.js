@@ -32,7 +32,7 @@ function parse(version) {
  * @param {number} a First version segment.
  * @param {number} b Second version segment.
  */
-function comparateMain (a, b) {
+function compareMain (a, b) {
     if (a && b) {
         a = +a;
         b = +b;
@@ -64,7 +64,7 @@ function comparePre(pre1, pre2) {
         } else if (a === b) {
             continue;
         } else {
-            return comparateMain(a, b);
+            return compareMain(a, b);
         }
     } while (++i);
 }
@@ -76,9 +76,9 @@ function comparePre(pre1, pre2) {
  */
 function compare(ver1, ver2) {
     return (
-        comparateMain(ver1[0], ver2[0]) ||
-        comparateMain(ver1[1], ver2[1]) ||
-        comparateMain(ver1[2], ver2[2]) ||
+        compareMain(ver1[0], ver2[0]) ||
+        compareMain(ver1[1], ver2[1]) ||
+        compareMain(ver1[2], ver2[2]) ||
         comparePre(ver1[3], ver2[3])
     );
 }
