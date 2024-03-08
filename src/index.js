@@ -32,12 +32,7 @@ function parse(version) {
  * @param {number} a First version segment.
  * @param {number} b Second version segment.
  */
-function compareMain (a, b) {
-    if (a && b) {
-        a = +a;
-        b = +b;
-    }
-
+function compareMain(a, b) {
     return a === b ? 0 : (a < b ? -1 : 1);
 }
 
@@ -85,22 +80,17 @@ function compare(ver1, ver2) {
 
 /**
  * Get the difference type between two semver versions.
- * @param {string} ver1 First version.
- * @param {string} ver2 Second version.
+ * @param {string} lowVer Lower version.
+ * @param {string} highVer Higher version.
  */
-function semiff(ver1, ver2) {
-    ver1 = parse(ver1);
-    ver2 = parse(ver2);
+function semiff(lowVer, highVer) {
+    lowVer = parse(lowVer);
+    highVer = parse(highVer);
 
-    const comparison = compare(ver1, ver2);
-
-    // versions are equal
-    if (comparison === 0) {
+    // lowVer is equal or higher than the highVer
+    if (compare(lowVer, highVer) >= 0) {
         return;
     }
-
-    // swap versions if the first version is higher than the second one
-    const [lowVer, highVer] = comparison < 0 ? [ver1, ver2] : [ver2, ver1];
 
     // check if versions are prereleases
     const lowHasPre = !!lowVer[3];
@@ -126,9 +116,9 @@ function semiff(ver1, ver2) {
     // add `pre` prefix if the high version is a prerelease
     const prefix = highHasPre ? 'pre' : '';
 
-    if (ver1[0] !== ver2[0]) return prefix + 'major';
-    if (ver1[1] !== ver2[1]) return prefix + 'minor';
-    if (ver1[2] !== ver2[2]) return prefix + 'patch';
+    if (lowVer[0] !== highVer[0]) return prefix + 'major';
+    if (lowVer[1] !== highVer[1]) return prefix + 'minor';
+    if (lowVer[2] !== highVer[2]) return prefix + 'patch';
 
     // both versions are prereleases
     return 'prerelease';

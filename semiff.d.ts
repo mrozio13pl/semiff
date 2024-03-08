@@ -1,4 +1,4 @@
-declare function semiff(ver1: string, ver2: string): semiff.Difference | undefined;
+declare function semiff(lowVer: string, highVer: string): semiff.Difference | undefined;
 
 declare namespace semiff {
     type Difference = 

@@ -1,4 +1,4 @@
-export default function semiff(ver1: string, ver2: string): Difference | undefined;
+export default function semiff(lowVer: string, highVer: string): Difference | undefined;
 
 export type Difference = 
     | 'major'
