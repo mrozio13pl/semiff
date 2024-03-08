@@ -16,12 +16,16 @@
                 "name": "conventionalcommits",
                 "types": [
                     {
-                      "type": "feat",
-                      "section": "🌟 Features"
+                        "type": "feat",
+                        "section": "🌟 Features"
                     },
                     {
-                      "type": "fix",
-                      "section": "🐞 Bug Fixes"
+                        "type": "fix",
+                        "section": "🐞 Bug Fixes"
+                    },
+                    {
+                        "type": "refactor",
+                        "section": "📦 Code Refactoring"
                     },
                     {}
                 ]
