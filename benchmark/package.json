@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "devDependencies": {
+    "@mrozio/exectime": "^1.0.0",
+    "@types/benchmark": "^2.1.5",
+    "ansis": "^2.3.0",
+    "benchmark": "^2.1.4",
+    "semiff": "file:../dist",
+    "semver": "^7.6.0",
+    "semver-diff": "^3.1.1"
+  }
+}

@@ -24,6 +24,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf dist && rollup -c",
+    "bench": "node benchmark",
     "lint": "publint && eslint .",
     "test": "tap",
     "release": "npm t && npm run build && release-it && npm run publish",
