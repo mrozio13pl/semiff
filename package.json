@@ -1,6 +1,6 @@
 {
   "name": "semiff",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A tiny (740B) utility to get the type difference between two semver versions.",
   "type": "commonjs",
   "main": "dist/index.js",
